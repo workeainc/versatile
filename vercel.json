@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.versatileinterior.com.bd"
+        }
+      ],
+      "destination": "https://versatileinterior.com.bd/$1",
+      "permanent": true
+    }
+  ]
+}
