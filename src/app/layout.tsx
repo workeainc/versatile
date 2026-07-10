@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
 import "./globals.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.replace(
+  "google-site-verification=",
+  ""
+);
+const bingSiteVerification = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION?.replace("msvalidate.01=", "");
 const siteJsonLd = [
   {
     "@context": "https://schema.org",
@@ -71,6 +77,14 @@ export const metadata: Metadata = {
     description:
       "Dhaka-based interior design studio for homes, workplaces, restaurants, showrooms, and events.",
     images: ["/opengraph-image"]
+  },
+  verification: {
+    google: googleSiteVerification,
+    other: bingSiteVerification
+      ? {
+          "msvalidate.01": bingSiteVerification
+        }
+      : undefined
   }
 };
 
@@ -87,6 +101,7 @@ export default function RootLayout({
           suppressHydrationWarning
           type="application/ld+json"
         />
+        <AnalyticsProvider />
         {children}
       </body>
     </html>

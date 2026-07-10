@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackEvent } from "@/lib/analytics/events";
 import { typography } from "@/styles/typography";
 
 const fieldClassName =
@@ -25,6 +26,7 @@ export function QuickContactForm() {
       className="grid gap-5"
       onSubmit={(event) => {
         event.preventDefault();
+        trackEvent("submit_contact_form", { form: "quick_contact" });
         setSent(true);
       }}
     >

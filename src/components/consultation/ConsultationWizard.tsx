@@ -1,9 +1,10 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useForm, useWatch } from "react-hook-form";
 import { budgetOptions, projectTypes, timelineOptions } from "@/data/contact";
+import { trackEvent } from "@/lib/analytics/events";
 import { typography } from "@/styles/typography";
 import { consultationSchema, type ConsultationFormValues } from "@/components/consultation/consultationSchema";
 import { OptionSelector } from "@/components/consultation/OptionSelector";
@@ -39,6 +40,15 @@ export function ConsultationWizard() {
   });
 
   const values = useWatch({ control });
+
+  useEffect(() => {
+    trackEvent("start_consultation", { form: "consultation_wizard" });
+  }, []);
+
+  useEffect(() => {
+    trackEvent("consultation_step", { form: "consultation_wizard", step });
+  }, [step]);
+
   const fieldsByStep = useMemo(
     () =>
       ({
@@ -63,7 +73,15 @@ export function ConsultationWizard() {
   return (
     <form
       className="grid gap-10"
-      onSubmit={handleSubmit(() => setSubmitted(true))}
+      onSubmit={handleSubmit((formValues) => {
+        trackEvent("complete_consultation", {
+          form: "consultation_wizard",
+          projectType: formValues.projectType,
+          timeline: formValues.timeline,
+          budget: formValues.budget
+        });
+        setSubmitted(true);
+      })}
     >
       <ProgressIndicator step={step} />
 
