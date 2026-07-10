@@ -8,7 +8,7 @@ import { trackEvent } from "@/lib/analytics/events";
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const metaPixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
+const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID ?? "xkf5ff3o80";
 const microsoftUetId = process.env.NEXT_PUBLIC_MICROSOFT_UET_ID;
 
 export function AnalyticsProvider() {
