@@ -27,3 +27,5 @@ dev-server*.log
 Thumbs.db
 .vscode/
 .idea/
+
+.vercel
