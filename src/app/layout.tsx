@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
@@ -88,6 +89,7 @@ export default function RootLayout({
           type="application/ld+json"
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
