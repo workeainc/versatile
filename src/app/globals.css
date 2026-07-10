@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  --color-background: #ffffff;
+  --color-surface: #fafafa;
+  --color-primary: #f65a12;
+  --color-primary-hover: #e04f0e;
+  --color-accent: #f65a12;
+  --color-success: #2e9e1e;
+  --color-text: #222222;
+  --color-text-muted: #666666;
+  --color-border: #ececec;
+  --color-overlay: rgba(34, 34, 34, 0.56);
+  --radius-small: 2px;
+  --radius-medium: 6px;
+  --shadow-subtle: 0 24px 80px rgba(34, 34, 34, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-inter), Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(246, 90, 18, 0.16);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation;
+}
+
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  transform: translateY(-150%);
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  padding: 1rem;
+  transition: border-color 180ms ease;
+}
+
+.field-input:focus {
+  border-color: var(--color-primary);
+}
+
+.field-input:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.draft-surface {
+  background-image:
+    linear-gradient(rgba(246, 90, 18, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 158, 30, 0.035) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0.01;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal-on-scroll {
+      animation: reveal-up 700ms ease both;
+      animation-range: entry 8% cover 28%;
+      animation-timeline: view();
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

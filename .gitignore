@@ -1,0 +1,29 @@
+# dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# production
+dist/
+build/
+
+# local env
+.env
+.env.*
+!.env.example
+
+# logs
+*.log
+dev-server*.log
+
+# local tooling
+.agents/
+.codex/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
