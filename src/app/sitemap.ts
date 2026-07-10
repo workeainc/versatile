@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { getAllPosts, getCategories, getTags } from "@/lib/blog/blog";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/projects", "/services", "/studio", "/process", "/blog", "/contact", "/request-consultation"];

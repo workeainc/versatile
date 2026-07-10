@@ -16,7 +16,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { getProjectBySlug, projects } from "@/data/projects";
 import { createMetadata } from "@/lib/seo/metadata";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 type ProjectPageProps = {
   params: Promise<{

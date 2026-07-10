@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteName = "Versatile Interior";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 export function createMetadata({
   title,

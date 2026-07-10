@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { BlogPost } from "@/lib/blog/blog";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 export function ShareLinks({ post }: { post: BlogPost }) {
   const url = `${siteUrl}/blog/${post.slug}`;

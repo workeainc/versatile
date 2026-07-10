@@ -10,7 +10,7 @@ import { SiteLayout } from "@/components/layout/SiteLayout";
 import { getServiceBySlug, services } from "@/data/services";
 import { createMetadata } from "@/lib/seo/metadata";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 type ServicePageProps = {
   params: Promise<{

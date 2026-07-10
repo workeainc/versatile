@@ -15,7 +15,7 @@ type LocalSeoLandingProps = {
   page: LocalSeoPage;
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 export function LocalSeoLanding({ page }: LocalSeoLandingProps) {
   const featuredProjects = getRelatedProjects(page.featuredProjectSlugs);

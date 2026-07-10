@@ -14,7 +14,7 @@ import { MarkdownContent } from "@/lib/blog/markdown";
 import { createMetadata } from "@/lib/seo/metadata";
 import { spacing } from "@/styles/spacing";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://versatileinterior.com.bd";
 
 type BlogPostPageProps = {
   params: Promise<{
