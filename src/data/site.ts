@@ -54,11 +54,11 @@ export const featuredProjects = [
     imageAlt: "Minimal office interior with warm wood and shared work tables"
   },
   {
-    slug: "knot-residence",
-    title: "Knot Residence",
+    slug: "woven-apartment",
+    title: "Woven Apartment",
     category: "Apartment",
     year: "2025",
-    location: "Dhanmondi",
+    location: "Bashundhara",
     description:
       "An apartment renovation balancing natural texture, compact planning, and refined everyday comfort.",
     image:

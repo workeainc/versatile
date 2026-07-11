@@ -68,7 +68,7 @@ export const services: Service[] = [
       "We begin with lifestyle mapping, then translate that into planning, material palettes, built-in storage, lighting, furniture direction, and details that local contractors can execute clearly.",
     projectCount: "42 projects",
     process: sharedProcess,
-    featuredProjects: ["courtyard-house", "woven-apartment", "knot-residence"],
+    featuredProjects: ["courtyard-house", "woven-apartment", "the-quiet-office"],
     faqs: [
       {
         question: "Can you renovate an existing apartment or house?",
