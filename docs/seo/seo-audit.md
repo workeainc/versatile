@@ -20,6 +20,7 @@ Completed during this audit:
 - Normalized sitemap/canonical domain usage to `https://versatileinterior.com.bd`.
 - Fixed stale project data that referenced `knot-residence`, which did not exist as a project page.
 - Updated sitemap `lastModified` values so they are stable and content-aware instead of regenerating as the current date every time.
+- Added `dynamicParams = false` to generated dynamic routes so unpublished project, service, blog, category, and tag URLs return proper 404 responses instead of soft 404 pages.
 
 ## High Priority
 
@@ -278,6 +279,7 @@ Effort: Low recurring.
 - Blog, project, service, and local SEO pages have structured data patterns.
 - Service project references now point only to existing project slugs.
 - Sitemap timestamps are stable and no longer generated as "now" for every URL.
+- Unknown dynamic route slugs are explicitly blocked from being generated on demand.
 
 ## Next Milestone
 

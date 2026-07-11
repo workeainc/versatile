@@ -13,6 +13,8 @@ type TagPageProps = {
   }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getTags().map((tag) => ({
     slug: tag.slug

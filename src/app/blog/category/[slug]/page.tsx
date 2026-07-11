@@ -13,6 +13,8 @@ type CategoryPageProps = {
   }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getCategories().map((category) => ({
     slug: category.slug

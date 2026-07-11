@@ -18,6 +18,8 @@ type ServicePageProps = {
   }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return services.map((service) => ({
     slug: service.slug
