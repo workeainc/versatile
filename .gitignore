@@ -18,6 +18,14 @@ build/
 *.log
 dev-server*.log
 
+# local media intake and generated assets
+media-workspace/**
+!media-workspace/
+!media-workspace/README.md
+!media-workspace/.gitkeep
+!media-workspace/projects/
+!media-workspace/projects/.gitkeep
+
 # local tooling
 .agents/
 .codex/
